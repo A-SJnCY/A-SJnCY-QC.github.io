@@ -1,6 +1,6 @@
 ---
+layout: home
 title: "환영합니다"
-layout: default
 ---
 
 # 환영합니다!
