@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
-title: "하고싶은 일을 하기 위"       # 사이트 타이틀
-description: "양자 컴퓨터& 축구"  # 양자컴퓨터를 연구하고 입으로 축구하는 블로그입니다.
+title: "하고싶은 일을 하기 위해"       # 사이트 타이틀
+description: "축구"  # 
 header_pages:
   - index.md
   - about.md
