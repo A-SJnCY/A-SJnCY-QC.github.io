@@ -1,16 +1,8 @@
 ---
 layout: home
 title: "환영합니다"
+list_title: "최근 글"
 ---
 
 ---
 
-## 최근 글
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <small>{{ post.date | date: "%Y-%m-%d" }}</small>
-    </li>
-  {% endfor %}
-</ul>
