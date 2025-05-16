@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<style>
+  .homepage-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;               /* 사이 간격을 1rem으로 줄임 */
+  }
+  .homepage-container .sidebar {
+    position: fixed;
+    top: 4rem;               /* 헤더 높이에 맞춰 조정 */
+    left: 1rem;              /* 뷰포트 왼쪽에서 1rem 띄우기 */
+    width: 200px;
+    padding: 1rem;           /* 내부 여백 1rem */
+    box-sizing: border-box;  /* padding 포함 너비 계산 */
+    /* background: white;    필요하면 배경색 추가 */
+  }
+  .homepage-container .sidebar h2 {
+    font-size: 1.25rem;      /* 너무 컸던 h2를 조금 작게 */
+    margin: 0 0 0.5rem;      /* 아래 여백만 살짝 */
+  }
+  .homepage-container .content {
+    margin-left: calc(200px + 2rem);
+                             /* sidebar 폭(200px) + padding 좌우(2×1rem) 만큼 밀기 */
+    flex: 1;
+  }
+</style>
+
+<div class="homepage-container">
+  <aside class="sidebar">
+    <h2>카테고리</h2>
+    <ul>
+      <li><a href="{{ '/categories/weeklyreview/' | relative_url }}"> 주간논문집 </a></li>
+      <li><a href="/categories/basics">기초이론집 </a></li>
+      <li><a href="/categories/anythings">기타잡설집 </a></li>
+      <details>
+        <summary>📂 정리파일</summary>
+        <ul>
+          <li><a href="/categories/ancienttheory">고대이론집</a></li>
+        </ul>
+      </details>
+    </ul>
+  </aside>
+   <main class="content">
+    <h2>{{ page.list_title }}</h2>
+    <ul>
+      {% for post in site.posts %}
+      <li>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <small>— {{ post.date | date: "%Y.%m.%d" }}</small>
+      </li>
+      {% endfor %}
+    </ul>
+  </main>
+</div>
